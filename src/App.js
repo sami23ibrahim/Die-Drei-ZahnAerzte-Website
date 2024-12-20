@@ -8,6 +8,7 @@ import QuoteSection from './Components/QuoteSection'; // Import the header compo
 import ServicesAnimation from './Components/ServicesAnimation'; // Import the header component
 import Footer from './Components/Footer'; // Import the header component
 import TeamPreview from './Components/TeamPreview'; // Import the header component
+import OurPhilosophy from './Components/OurPhilosophy'; // Import the header component
 
 
 const videoPath = "/Assets/vid.mp4";
@@ -30,12 +31,15 @@ function App() {
 <div style={{marginTop: "30px",backgroundColor: "#fdf9f4" }}><CustomHeroImage></CustomHeroImage> </div>
 
 <ServicesAnimation/>
-<ScrollCards></ScrollCards>
-<QuoteSection />
+{/* <TeamPreview /> */}
 <TeamPreview />
-<div style={{ backgroundColor: "#fdf9f4" }}> {/* Replace #fce4ec with your desired color */}
-  <Footer />
-</div>
+<ScrollCards></ScrollCards>
+{/* <QuoteSection /> */}
+
+
+<OurPhilosophy />
+
+<div style={{ backgroundColor: "#fdf9f4" }}><Footer /></div>
 
    </div>
   );

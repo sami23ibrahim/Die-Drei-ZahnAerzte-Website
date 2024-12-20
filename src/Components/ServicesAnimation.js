@@ -170,7 +170,7 @@ const ServicesAnimation = () => {
               whileHover="hover"
               initial="initial"
             />
-            <h3 className="text-gray-500 font-medium text-lg group-hover:text-gray-500 font-medium text-lg transition duration-300">
+            <h3 className="text-3xl font-weight: 700  text-gray-500 group-hover:text-gray-500 font-medium text-lg transition duration-300">
               {service.title}
             </h3>
           </motion.div>

@@ -130,32 +130,80 @@ const ServicesAnimation = () => {
     });
   }, []);
 
+  // return (
+  //   <div
+  //     className="bg-[#fdf9f4] py-12 px-4"
+  //     style={{
+  //       fontFamily: "'Inter', sans-serif",
+  //     }}
+  //   >
+  //     {/* "Our Services" title */}
+  //     <h2
+  //       ref={titleRef}
+  //       className="text-center text-3xl font-bold mb-20 mt-10 text-customPink"
+  //     >
+  //       Our Services
+  //     </h2>
+
+  //     {/* Services grid */}
+  //     <div
+  //       className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-12 gap-x-8 justify-center items-center mx-auto"
+  //       style={{ maxWidth: "900px" }} // Center the grid within a fixed width
+  //     >
+  //       {services.map((service, index) => (
+  //         <motion.div
+  //           key={index}
+  //           ref={(el) => (serviceRefs.current[index] = el)} // Attach ref to each service icon
+  //           className="flex flex-col items-center text-center group"
+  //           whileHover={{ scale: 1.15 }} // Slight size increase on hover
+  //           initial={{ scale: 1 }}
+  //           transition={{ duration: 0.3, ease: "easeInOut" }}
+  //         >
+  //           <motion.img
+  //             src={service.icon}
+  //             alt={service.title}
+  //             className="w-12 h-12 mb-2"
+  //             variants={{
+  //               initial: { rotate: 0 },
+  //               hover: { rotate: -10 }, // Slight left rotation
+  //             }}
+  //             whileHover="hover"
+  //             initial="initial"
+  //           />
+  //           <h3 className="text-3xl font-weight: 700  text-gray-500 group-hover:text-gray-500 font-medium text-lg transition duration-300">
+  //             {service.title}
+  //           </h3>
+  //         </motion.div>
+  //       ))}
+  //     </div>
+  //   </div>
+  // );
+
+
   return (
     <div
-      className="bg-[#fdf9f4] py-12 px-4"
+      className="bg-[#fdf9f4] py-12 px-4 w-screen overflow-x-hidden overflow-y-hidden"
       style={{
         fontFamily: "'Inter', sans-serif",
       }}
     >
-      {/* "Our Services" title */}
       <h2
         ref={titleRef}
-        className="text-center text-3xl font-bold mb-12 text-customPink"
+        className="text-center text-3xl font-bold mb-20 mt-10 text-customPink"
       >
         Our Services
       </h2>
-
-      {/* Services grid */}
+  
       <div
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-12 gap-x-8 justify-center items-center mx-auto"
-        style={{ maxWidth: "900px" }} // Center the grid within a fixed width
+        style={{ maxWidth: "900px", margin: "0 auto" }}
       >
         {services.map((service, index) => (
           <motion.div
             key={index}
-            ref={(el) => (serviceRefs.current[index] = el)} // Attach ref to each service icon
+            ref={(el) => (serviceRefs.current[index] = el)}
             className="flex flex-col items-center text-center group"
-            whileHover={{ scale: 1.15 }} // Slight size increase on hover
+            whileHover={{ scale: 1.15 }}
             initial={{ scale: 1 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
@@ -170,7 +218,7 @@ const ServicesAnimation = () => {
               whileHover="hover"
               initial="initial"
             />
-            <h3 className="text-3xl font-weight: 700  text-gray-500 group-hover:text-gray-500 font-medium text-lg transition duration-300">
+            <h3 className="text-lg text-gray-500 group-hover:text-gray-500 font-medium transition duration-300">
               {service.title}
             </h3>
           </motion.div>
@@ -178,6 +226,11 @@ const ServicesAnimation = () => {
       </div>
     </div>
   );
+  
+  
+
+
+
 };
 
 export default ServicesAnimation;

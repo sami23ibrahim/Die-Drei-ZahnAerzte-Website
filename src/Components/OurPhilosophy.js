@@ -35,30 +35,42 @@ const OurPhilosophy = () => {
       {/* "Our Philosophy" Title */}
       <h2
         ref={titleRef}
-        className="text-center text-3xl font-bold mb-12 text-customPink"
+        className="text-center text-3xl font-bold mb-32 mt-0 text-customPink"
         style={{ fontFamily: "'Inter', sans-serif" }}
       >
         Our Philosophy
       </h2>
 
-      <div className="max-w-6xl mx-auto flex flex-col gap-16">
+      <div className="max-w-6xl mx-auto flex flex-col gap-8">
         {/* First Quote */}
         <div className="text-center flex flex-col items-center space-y-4 px-4">
-          <blockquote className="text-2xl lg:text-3xl font-serif italic text-gray-500 leading-relaxed">
+          <blockquote className="text-2xl lg:text-2xl font-medium text-gray-500 leading-relaxed">
             Our practice is all about a special dental experience, where
-            openness and expertise are the focus. <br />
-            Our cultural diversity and
-            warm atmosphere make us special.
+            openness and expertise are the focus.  
+            
           </blockquote>
         </div>
 
         {/* Second Quote */}
         <div className="text-center flex flex-col items-center space-y-4 px-4">
-          <blockquote className="text-2xl lg:text-3xl font-serif italic text-gray-500 leading-relaxed">
-            For us, every patient is unique, and together we achieve unbeatable
-            results. <br />
-            We stand for tailor-made solutions, characterized by
-            communication, trust and a passion for dental health.
+          <blockquote className="text-2xl lg:text-2xl font-medium text-gray-500 leading-relaxed">
+          Our cultural diversity and
+            warm atmosphere make us special.
+           
+          </blockquote>
+        </div>
+          {/* 3ed Quote */}
+          <div className="text-center flex flex-col items-center space-y-4 px-4">
+          <blockquote className="text-2xl lg:text-2xl font-medium text-gray-500 leading-relaxed">
+          For us, every patient is unique, and together we achieve unbeatable
+          results.
+          </blockquote>
+        </div>
+          {/* 4th Quote */}
+          <div className="text-center flex flex-col items-center space-y-4 px-4">
+          <blockquote className="text-2xl lg:text-2xl font-medium text-gray-500 leading-relaxed">
+          We stand for tailor-made solutions, characterized by
+          communication, trust and a passion for dental health.
           </blockquote>
         </div>
       </div>

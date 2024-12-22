@@ -1656,6 +1656,270 @@
 
 
 
+// import React, { useEffect, useRef, useState } from "react";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const TeamSection = () => {
+//   const teamRef = useRef([]);
+//   const titleRef = useRef(null);
+//   const logoRefs = useRef([]);
+//   const [activeContent, setActiveContent] = useState({
+//     title: "Our dental practice",
+//     text: "Our dental practice, right next to Kotti, combines openness and expertise. We speak your language and set new standards in dental health with passion. Our diversity reflects the lively area. Together we will give you a radiant smile. Look forward to a special dental experience!",
+//   });
+//   const [clickedButton, setClickedButton] = useState(null);
+
+//   useEffect(() => {
+//     // Animate each team member
+//     teamRef.current.forEach((teamMember) => {
+//       gsap.fromTo(
+//         teamMember,
+//         { scale: 1 },
+//         {
+//           scale: 1.5,
+//           duration: 8.5,
+//           scrollTrigger: {
+//             trigger: teamMember,
+//             start: "top 80%",
+//             end: "top 30%",
+//             scrub: true,
+//           },
+//         }
+//       );
+//     });
+
+//     // Animate the title
+//     if (titleRef.current) {
+//       gsap.fromTo(
+//         titleRef.current,
+//         { scale: 1 },
+//         {
+//           scale: 1.2,
+//           duration: 3.5,
+//           scrollTrigger: {
+//             trigger: titleRef.current,
+//             start: "top 80%",
+//             end: "top 30%",
+//             scrub: true,
+//           },
+//         }
+//       );
+//     }
+
+//     // Animate the logos
+//     logoRefs.current.forEach((logo, index) => {
+//       const direction = index % 2 === 0 ? "bottom-to-top" : "top-to-bottom";
+
+//       gsap.fromTo(
+//         logo,
+//         { y: direction === "bottom-to-top" ? "100%" : "-100%", opacity: 0.2 },
+//         {
+//           y: direction === "bottom-to-top" ? "-100%" : "100%",
+//           opacity: 0.3,
+//           duration: 5,
+//           scrollTrigger: {
+//             trigger: logo,
+//             start: "top bottom",
+//             end: "bottom top",
+//             scrub: true,
+//           },
+//         }
+//       );
+//     });
+//   }, []);
+
+//   const teamMembers = [
+//     {
+//       name: "Hakam El Daghma",
+//       title: "About Hakam El Daghma",
+//       text: "Hakam has expertise in various areas of dentistry. His specialization includes microscopic root canal treatment, dentures (prosthetics) and currently aesthetic dentistry for veneers and front tooth aesthetics. Hakam offers sensitive care, especially for anxious patients, and is available for consultations in German, English and Arabic.",
+//       image: "/Assets/hak.png",
+//     },
+//     {
+//       name: "Fabian Badour",
+//       title: "About Fabian Badour",
+//       text: "Fabian treats within the areas of surgery, implantology, dental prosthetics and front tooth aesthetics. His treatment also extends to anxious patients. Fabian is available for consultations in various languages, including Arabic, English and German, to ensure holistic care for his patients.",
+//       image: "/Assets/fab.png",
+//     },
+//     {
+//       name: "Prabh Singh Mahal",
+//       title: "About Prabh Singh Mahal",
+//       text: "Prabh specializes in surgery, implantology, dental prosthetics and anterior tooth aesthetics. With his patient-centered care, he also dedicates himself to treating anxious patients. Prabjit offers consultations in various languages, including Punjabi, Hindi, Urdu, English and German, to ensure comprehensive care for his patients.",
+//       image: "/Assets/hak5.png",
+//     },
+//   ];
+
+//   const logos = [
+//     { id: 1, size: "180px", rotation: 15, image: "/Assets/torp.png" },
+//     { id: 2, size: "200px", rotation: -25, image: "/Assets/torp.png" },
+//     { id: 3, size: "110px", rotation: 30, image: "/Assets/toro.png" },
+//     { id: 4, size: "150px", rotation: -10, image: "/Assets/toro2.png" },
+//     { id: 5, size: "190px", rotation: 45, image: "/Assets/torp.png" },
+//   ];
+
+//   const handleContentChange = (title, text, index) => {
+//     setActiveContent({ title, text });
+//     setClickedButton(index);
+//   };
+
+//   const handleResetContent = () => {
+//     setActiveContent({
+//       title: "Our dental practice",
+//       text: "Our dental practice, right next to Kotti, combines openness and expertise. We speak your language and set new standards in dental health with passion. Our diversity reflects the lively area. Together we will give you a radiant smile. Look forward to a special dental experience!",
+//     });
+//     setClickedButton(null);
+//   };
+
+//   return (
+//     <div className="relative bg-[#fdf9f4] py-16" onClick={handleResetContent}>
+//       {/* Background */}
+//       <div
+//         className="absolute w-full bg-[#fffcdc00] z-0"
+//         style={{
+//           width: "45%",
+//           height: "270px",
+//           bottom: "90",
+//           left: "51%",
+//           transform: "translateX(-50%)",
+//           borderTopLeftRadius: "150px",
+//           borderTopRightRadius: "180px",
+//           borderBottomLeftRadius: "70px",
+//           borderBottomRightRadius: "70px",
+//         }}
+//       ></div>
+
+//       {/* Logos */}
+//       <div className="absolute w-full z-5 grid grid-cols-5 gap-4">
+//         {logos.map((logo, index) => (
+//           <img
+//             key={logo.id}
+//             ref={(el) => (logoRefs.current[index] = el)}
+//             src={logo.image}
+//             alt={`Logo ${index + 1}`}
+//             className="opacity-20"
+//             style={{
+//               width: logo.size,
+//               height: logo.size,
+//               transform: `rotate(${logo.rotation}deg)`,
+//             }}
+//           />
+//         ))}
+//       </div>
+
+//       {/* Content Section */}
+//       <div className="relative z-10">
+//         <h2
+//           ref={titleRef}
+//           className="text-center text-customPink text-3xl font-bold mb-12 mt-0"
+//         >
+//           The Team
+//         </h2>
+
+//         {/* Team Members */}
+//         <div
+//           className="relative flex justify-center cursor-pointer items-end gap-10 "
+//           style={{ paddingBottom: "50px" }}
+//         >
+//           {teamMembers.map((member, index) => (
+//             <div
+//               key={index}
+//               ref={(el) => (teamRef.current[index] = el)}
+//               className="flex flex-col items-center relative"
+//               style={{ position: "relative", overflow: "visible" }}
+//               onClick={(e) => {
+//                 e.stopPropagation();
+//                 handleContentChange(member.title, member.text, index);
+//               }}
+//             >
+//               <img
+//                 src={member.image}
+//                 alt={member.name}
+//                 className="w-48 h-auto"
+//                 style={{
+//                   transformOrigin: "bottom",
+//                   zIndex: 5,
+//                 }}
+//               />
+// {/* <div
+//   className="absolute text-center bg-customPink font-small py-[1px] px-[1px] rounded-md cursor-pointer"
+//   style={{
+//     bottom: "-20px",
+//     zIndex: 50,
+//     width: "174px",
+//     color: clickedButton === index ? "#6b7280" : "#fdf9f4",
+//   }}
+// >
+//   <span
+//     className="transition-transform duration-300 transform hover:scale-105"
+//     style={{ display: "inline-block" }}
+//   >
+//     {member.name}
+//   </span>
+// </div> */}
+
+
+// <div
+//   className="absolute text-around bg-customPink font-small py-[1px] px-[0px] rounded-md cursor-pointer"
+//   style={{
+//     bottom: "-20px",
+//     zIndex: 50,
+//     width: "172px",
+//     color: clickedButton === index ? "#6b7280" : "#fdf9f4",
+//   }}
+// >
+//   <div className="flex items-center justify-center space-x-0.5 transition-transform duration-300 transform hover:scale-105">
+//     {/* Member Name */}
+//     <span style={{ fontSize: "15px" }}>{member.name}</span>
+//     {/* SVG Arrow */}
+//     <svg
+//       className="arrow"
+//       width="8"
+//       height="4"
+//       viewBox="0 0 10 8"
+//       fill="none"
+//       xmlns="http://www.w3.org/2000/svg"
+//     >
+//       <path
+//         d="M0 0.5L-1.09278e-07 3L5 8L10 3L10 0.5L5 5.5L0 0.5Z"
+//         fill={clickedButton === index ? "#6b7280" : "#fdf9f4"}
+//       ></path>
+//     </svg>
+//   </div>
+// </div>
+
+
+
+
+
+
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* Text Section */}
+//         <div className="text-center mt-[66px] px-4">
+//           <div className="bg-[#f496bf00] rounded-lg p-1 mx-auto" style={{ width: "90%" }}>
+//             {/* {activeContent.title && (
+//               <h3 className="text-2xl font-bold  text-gray-500 mb-1 mt-1">{activeContent.title}</h3>
+//             )} */}
+//             <p className="text-xl lg:text-xl font-medium text-gray-500 leading-relaxed">
+//               {activeContent.text}
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default TeamSection;
+
+
+
+
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -1768,13 +2032,16 @@ const TeamSection = () => {
   const handleResetContent = () => {
     setActiveContent({
       title: "Our dental practice",
-      text: "Right next to Kotti, combines openness and expertise. We speak your language and set new standards in dental health with passion. Our diversity reflects the lively area. Together we will give you a radiant smile. Look forward to a special dental experience!",
+      text: "Our dental practice, right next to Kotti, combines openness and expertise. We speak your language and set new standards in dental health with passion. Our diversity reflects the lively area. Together we will give you a radiant smile. Look forward to a special dental experience!",
     });
     setClickedButton(null);
   };
 
   return (
-    <div className="relative bg-[#fdf9f4] py-16" onClick={handleResetContent}>
+    <div
+      className="relative bg-[#fdf9f4] py-16 overflow-x-hidden"
+      onClick={handleResetContent}
+    >
       {/* Background */}
       <div
         className="absolute w-full bg-[#fffcdc00] z-0"
@@ -1813,7 +2080,7 @@ const TeamSection = () => {
       <div className="relative z-10">
         <h2
           ref={titleRef}
-          className="text-center text-customPink text-3xl font-bold mb-10"
+          className="text-center text-customPink text-3xl font-bold mb-12 mt-0"
         >
           The Team
         </h2>
@@ -1843,13 +2110,13 @@ const TeamSection = () => {
                   zIndex: 5,
                 }}
               />
-<div
+{/* <div
   className="absolute text-center bg-customPink font-small py-[1px] px-[1px] rounded-md cursor-pointer"
   style={{
     bottom: "-20px",
     zIndex: 50,
-    width: "170px",
-    color: clickedButton === index ? "#f68b1f" : "#fdf9f4",
+    width: "174px",
+    color: clickedButton === index ? "#6b7280" : "#fdf9f4",
   }}
 >
   <span
@@ -1858,7 +2125,40 @@ const TeamSection = () => {
   >
     {member.name}
   </span>
+</div> */}
+
+
+<div
+  className="absolute text-around bg-customPink font-small py-[1px] px-[0px] rounded-md cursor-pointer"
+  style={{
+    bottom: "-20px",
+    zIndex: 50,
+    width: "172px",
+    color: clickedButton === index ? "#6b7280" : "#fdf9f4",
+  }}
+>
+  <div className="flex items-center justify-center space-x-0.5 transition-transform duration-300 transform hover:scale-105">
+    {/* Member Name */}
+    <span style={{ fontSize: "15px" }}>{member.name}</span>
+    {/* SVG Arrow */}
+    <svg
+      className="arrow"
+      width="8"
+      height="4"
+      viewBox="0 0 10 8"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0.5L-1.09278e-07 3L5 8L10 3L10 0.5L5 5.5L0 0.5Z"
+        fill={clickedButton === index ? "#6b7280" : "#fdf9f4"}
+      ></path>
+    </svg>
+  </div>
 </div>
+
+
+
 
 
 
@@ -1869,10 +2169,10 @@ const TeamSection = () => {
         {/* Text Section */}
         <div className="text-center mt-[66px] px-4">
           <div className="bg-[#f496bf00] rounded-lg p-1 mx-auto" style={{ width: "90%" }}>
-            {activeContent.title && (
+            {/* {activeContent.title && (
               <h3 className="text-2xl font-bold  text-gray-500 mb-1 mt-1">{activeContent.title}</h3>
-            )}
-            <p className="text-2xl lg:text-2xl font-medium text-gray-500 leading-relaxed">
+            )} */}
+            <p className="text-xl lg:text-xl font-medium text-gray-500 leading-relaxed">
               {activeContent.text}
             </p>
           </div>

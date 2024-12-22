@@ -196,14 +196,14 @@ const CustomHero = () => {
 
       {/* Content */}
       <div
-        className="relative text-center text-white px-8"
+        className="relative text-center text-[#fdf9f4] px-8"
         style={{
           maxWidth: "800px", // Restrict the text content width
           width: "100%", // Ensure it remains responsive
         }}
       >
         {/* Main Text */}
-        <h1 className="text-2xl md:text-3xl font-bold mb-16">
+        <h1 className="text-2xl md:text-3xl font-bold text-[#fdf9f4] mb-16">
           Your dental practice directly at Kotti in the middle of Kreuzberg
         </h1>
         <p className="mt-2 md:text-lg">
@@ -213,7 +213,7 @@ const CustomHero = () => {
 
       {/* Cards */}
       <div className="relative z-10 flex flex-wrap justify-center mt-8 gap-4 px-4">
-        <div className="bg-gray-800 bg-opacity-25 text-center text-white p-8 rounded-lg shadow-md w-72">
+        <div className="bg-gray-800 bg-opacity-25 text-center text-[#fdf9f4] p-8 rounded-lg shadow-md w-72">
           <img
             src="/Assets/across-the-world.svg" // Replace with the path to your image
             alt="Icon"

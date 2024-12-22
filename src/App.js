@@ -45,8 +45,10 @@ import OurPhilosophy from './Components/OurPhilosophy';
 import Navbar from './Components/Navbar'; 
 import Logo from './Components/Logo'; 
 import AppointmentButton from './Components/AppointmentButton'; 
+import BurgerMenu from './Components/BurgerMenu'; 
 
-const videoPath = "/Assets/vid.mp4";
+
+const videoPath = "/Assets/vid1.mp4";
 
 function App() {
   return (
@@ -57,7 +59,9 @@ function App() {
       <Navbar />
       
       <AppointmentButton />
+      <BurgerMenu />
 
+      
       <FullScreenVideo videoSrc={videoPath} textOverlay="Die Drei ZAHNÄRZTE" />
       
       <CustomHeroImage />

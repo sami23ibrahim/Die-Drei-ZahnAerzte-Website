@@ -2059,7 +2059,7 @@ const TeamSection = () => {
       ></div>
 
       {/* Logos */}
-      <div className="absolute w-full z-5 grid grid-cols-5 gap-4">
+      <div className="absolute w-full z-5 grid grid-cols-5 gap-4 z-5">
         {logos.map((logo, index) => (
           <img
             key={logo.id}

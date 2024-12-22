@@ -165,6 +165,290 @@
 
 
 
+// import { useEffect, useRef } from "react";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const Navbar = () => {
+//   const topNavbarRef = useRef(null);
+//   const bottomNavbarRef = useRef(null);
+
+//   useEffect(() => {
+//     const topNavbar = topNavbarRef.current;
+//     const bottomNavbar = bottomNavbarRef.current;
+
+//     // Initial state of both navbars
+//     gsap.set(topNavbar, { top: "10px", left: "50%", x: "-50%", opacity: 1 });
+//     gsap.set(bottomNavbar, { bottom: "-50px", left: "50%", x: "-50%", opacity: 0 });
+
+//     // ScrollTrigger for top navbar to move up and disappear
+//     ScrollTrigger.create({
+//       trigger: document.body,
+//       start: "1330px top",
+//       end: "300px top",
+//       scrub: true,
+//       onUpdate: (self) => {
+//         if (self.direction > 0) {
+//           gsap.to(topNavbar, { top: "-100px", opacity: 1, duration: 1.5 });
+//         } else {
+//           gsap.to(topNavbar, { top: "10px", opacity: 1, duration: 1 });
+//         }
+//       },
+//     });
+
+//     // ScrollTrigger for bottom navbar to slide up and appear
+//     ScrollTrigger.create({
+//       trigger: document.body,
+//      start: "1330px top",
+//       end: "100vh top",
+//       scrub: true,
+//       onUpdate: (self) => {
+//         if (self.direction > 0) {
+//           gsap.to(bottomNavbar, { bottom: "0", opacity: 1, duration: 1.5 });
+//         } else {
+//           gsap.to(bottomNavbar, { bottom: "-100px", opacity: 1, duration: 1.5 });
+//         }
+//       },
+//     });
+
+//     // Add active class to the current link in the bottom navbar
+//     const links = bottomNavbar.querySelectorAll("a");
+//     links.forEach((link) => {
+//       const sectionId = link.getAttribute("href");
+//       if (!sectionId.startsWith("#")) return;
+
+//       ScrollTrigger.create({
+//         trigger: sectionId,
+//         start: "top center",
+//         end: "bottom center",
+//         onEnter: () => setActiveLink(link),
+//         onEnterBack: () => setActiveLink(link),
+//       });
+//     });
+
+//     function setActiveLink(activeLink) {
+//       links.forEach((link) => {
+//         link.style.color = ""; // Reset color for all links
+//       });
+//       activeLink.style.color = "#f496bf"; // Apply pink color to the active link
+//     }
+//   }, []);
+
+//   return (
+//     <>
+//       {/* Top Navbar */}
+//       <div
+//         ref={topNavbarRef}
+//         className="fixed z-50 rounded bg-[#fdf9f4e0] shadow-md p-1 pl-6 pr-6 flex justify-center items-center w-0.9/3 mt-0"
+//       >
+//         <ul className="flex space-x-6">
+//           <li>
+//             <a href="#services" className="  font-medium text-gray-500 leading-relaxed hover:text-customPink">
+//               Our Services
+//             </a>
+//           </li>
+//           <li>
+//             <a href="#team" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+//               The Team
+//             </a>
+//           </li>
+//           <li>
+//             <a href="#philosophy" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+//               Our Philosophy
+//             </a>
+//           </li>
+//           <li>
+//             <a href="#contact" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+//               Contact Us
+//             </a>
+//           </li>
+//         </ul>
+//       </div>
+
+//       {/* Bottom Navbar */}
+//       <div
+//         ref={bottomNavbarRef}
+//         className="fixed z-50 bg-[#fdf9f4] rounded mb-2 shadow-md p-1 pl-6 pr-6 flex justify-center items-center w-0.9/3"
+//       >
+//         <ul className="flex space-x-6 relative">
+//           <li>
+//             <a href="#services" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+//               Our Services
+//             </a>
+//           </li>
+//           <li>
+//             <a href="#team" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+//               The Team
+//             </a>
+//           </li>
+//           <li>
+//             <a href="#philosophy" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+//               Our Philosophy
+//             </a>
+//           </li>
+//           <li>
+//             <a href="#contact" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+//               Contact Us
+//             </a>
+//           </li>
+//         </ul>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
+// import { useEffect, useRef } from "react";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const Navbar = () => {
+//   const topNavbarRef = useRef(null);
+//   const bottomNavbarRef = useRef(null);
+
+//   useEffect(() => {
+//     const topNavbar = topNavbarRef.current;
+//     const bottomNavbar = bottomNavbarRef.current;
+
+//     // Initial state of both navbars
+//     gsap.set(topNavbar, { top: "10px", left: "50%", x: "-50%", opacity: 1 });
+//     gsap.set(bottomNavbar, { bottom: "-50px", left: "50%", x: "-50%", opacity: 0 });
+
+//     // ScrollTrigger for top navbar to move up and disappear
+//     ScrollTrigger.create({
+//       trigger: document.body,
+//       start: "1330px top",
+//       end: "300px top",
+//       scrub: true,
+//       onUpdate: (self) => {
+//         if (self.direction > 0) {
+//           gsap.to(topNavbar, { top: "-100px", opacity: 1, duration: 1.5 });
+//         } else {
+//           gsap.to(topNavbar, { top: "10px", opacity: 1, duration: 1 });
+//         }
+//       },
+//     });
+
+//     // ScrollTrigger for bottom navbar to slide up and appear
+//     ScrollTrigger.create({
+//       trigger: document.body,
+//       start: "1330px top",
+//       end: "100vh top",
+//       scrub: true,
+//       onUpdate: (self) => {
+//         if (self.direction > 0) {
+//           gsap.to(bottomNavbar, { bottom: "0", opacity: 1, duration: 1.5 });
+//         } else {
+//           gsap.to(bottomNavbar, { bottom: "-100px", opacity: 1, duration: 1.5 });
+//         }
+//       },
+//     });
+
+//     // Add active class to the current link in the bottom navbar
+//     const links = bottomNavbar.querySelectorAll("a");
+//     links.forEach((link) => {
+//       const sectionId = link.getAttribute("href");
+//       if (!sectionId.startsWith("#")) return;
+
+//       ScrollTrigger.create({
+//         trigger: sectionId,
+//         start: "top center",
+//         end: "bottom center",
+//         onEnter: () => setActiveLink(link),
+//         onEnterBack: () => setActiveLink(link),
+//       });
+//     });
+
+//     function setActiveLink(activeLink) {
+//       links.forEach((link) => {
+//         link.style.color = ""; // Reset color for all links
+//       });
+//       activeLink.style.color = "#f496bf"; // Apply pink color to the active link
+//     }
+//   }, []);
+
+//   return (
+//     <>
+//       {/* Top Navbar */}
+//       <div
+//         ref={topNavbarRef}
+//         className="
+//           fixed z-50 rounded bg-[#fdf9f4e0] shadow-md p-1 pl-6 pr-6 
+//           flex justify-center items-center 
+//           w-[calc(83%-194px)] 
+//           ml-[0px] mr-[300px] 
+//           mt-0 top-navbar
+//           lg:w-auto lg:ml-0 lg:mr-0
+//         "
+//       >
+//         <ul className="flex space-x-6 whitespace-nowrap">
+//           <li>
+//             <a href="#services" className="font-medium text-gray-500 leading-relaxed hover:text-customPink">
+//               Our Services
+//             </a>
+//           </li>
+//           <li>
+//             <a href="#team" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
+//               The Team
+//             </a>
+//           </li>
+//           <li>
+//             <a href="#philosophy" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
+//               Our Philosophy
+//             </a>
+//           </li>
+//           <li>
+//             <a href="#contact" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
+//               Contact Us
+//             </a>
+//           </li>
+//         </ul>
+//       </div>
+
+//       {/* Bottom Navbar */}
+//       <div
+//         ref={bottomNavbarRef}
+//         className="fixed z-50 bg-[#fdf9f4] rounded mb-2 shadow-md p-1 pl-6 pr-6 flex justify-center items-center w-0.9/3"
+//       >
+//         <ul className="flex space-x-6 relative">
+//           <li>
+//             <a href="#services" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
+//               Our Services
+//             </a>
+//           </li>
+//           <li>
+//             <a href="#team" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
+//               The Team
+//             </a>
+//           </li>
+//           <li>
+//             <a href="#philosophy" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
+//               Our Philosophy
+//             </a>
+//           </li>
+//           <li>
+//             <a href="#contact" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
+//               Contact Us
+//             </a>
+//           </li>
+//         </ul>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Navbar;
+
+
+
+
+
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -201,7 +485,7 @@ const Navbar = () => {
     // ScrollTrigger for bottom navbar to slide up and appear
     ScrollTrigger.create({
       trigger: document.body,
-     start: "1330px top",
+      start: "1330px top",
       end: "100vh top",
       scrub: true,
       onUpdate: (self) => {
@@ -241,26 +525,33 @@ const Navbar = () => {
       {/* Top Navbar */}
       <div
         ref={topNavbarRef}
-        className="fixed z-50 rounded bg-[#fdf9f4e0] shadow-md p-1 pl-6 pr-6 flex justify-center items-center w-0.9/3 mt-0"
+        className="
+          fixed z-50 rounded bg-[#fdf9f4e0] shadow-md p-1 pl-6 pr-6 
+          flex justify-center items-center 
+          w-[calc(83%-194px)] 
+          ml-[0px] mr-[300px] 
+          mt-0 top-navbar
+          lg:w-auto lg:ml-0 lg:mr-0
+        "
       >
-        <ul className="flex space-x-6">
+        <ul className="flex space-x-6 whitespace-nowrap">
           <li>
-            <a href="#services" className="  font-medium text-gray-500 leading-relaxed hover:text-customPink">
+            <a href="#services" className="font-medium text-gray-500 leading-relaxed hover:text-customPink">
               Our Services
             </a>
           </li>
           <li>
-            <a href="#team" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+            <a href="#team" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
               The Team
             </a>
           </li>
           <li>
-            <a href="#philosophy" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+            <a href="#philosophy" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
               Our Philosophy
             </a>
           </li>
           <li>
-            <a href="#contact" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+            <a href="#contact" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
               Contact Us
             </a>
           </li>
@@ -270,33 +561,53 @@ const Navbar = () => {
       {/* Bottom Navbar */}
       <div
         ref={bottomNavbarRef}
-        className="fixed z-50 bg-[#fdf9f4] rounded mb-2 shadow-md p-1 pl-6 pr-6 flex justify-center items-center w-0.9/3"
+        className="fixed z-50 bg-[#fdf9f4] rounded mb-2 shadow-md p-1 pl-6 pr-6 flex justify-center items-center w-0.9/3 bottom-navbar-responsive"
       >
         <ul className="flex space-x-6 relative">
           <li>
-            <a href="#services" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+            <a href="#services" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
               Our Services
             </a>
           </li>
           <li>
-            <a href="#team" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+            <a href="#team" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
               The Team
             </a>
           </li>
           <li>
-            <a href="#philosophy" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+            <a href="#philosophy" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
               Our Philosophy
             </a>
           </li>
           <li>
-            <a href="#contact" className="hover:text-customPink  font-medium text-gray-500 leading-relaxed">
+            <a href="#contact" className="hover:text-customPink font-medium text-gray-500 leading-relaxed">
               Contact Us
             </a>
           </li>
         </ul>
       </div>
+
+      {/* Styles for responsiveness */}
+      <style jsx>{`
+        .bottom-navbar-responsive {
+          width: 0.9/3;
+        }
+
+        @media (max-width: 944px) and (min-width: 750px) {
+          .bottom-navbar-responsive {
+            width: 74%;
+          }
+        }
+          @media (max-width: 760px) {
+    .top-navbar,
+    .bottom-navbar-responsive {
+      display: none;
+    }
+  }
+      `}</style>
     </>
   );
 };
 
 export default Navbar;
+

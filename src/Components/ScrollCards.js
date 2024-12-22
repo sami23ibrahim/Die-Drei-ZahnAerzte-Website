@@ -1101,7 +1101,10 @@ const ScrollCards = () => {
       className="bg-[#fdf9f4] py-16 relative mb-28"
       style={{
         paddingBottom: "20px", // Prevent clipping
+       // overflow: "visible", // Allow content from the next section to overlap
         overflowX: "hidden", // Prevent horizontal scrolling
+       
+        zIndex: 0, // Ensure it's beneath the logos of the next component
       }}
     >
       {/* Title with scaling effect */}

@@ -219,7 +219,7 @@ const StyledFooter = () => {
 
       {/* Footer Component */}
       <footer
-        className="relative bg-[#f496bf] text-white text-center mb-12 mx-4"
+        className="relative bg-[#f496bf] text-white text-center mb-12 ml-[6px] mr-[20px]"
         style={{
           borderTopLeftRadius: "25px",
           borderTopRightRadius: "25px",

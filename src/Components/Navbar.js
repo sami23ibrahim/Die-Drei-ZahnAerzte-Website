@@ -526,7 +526,7 @@ const Navbar = () => {
       <div
         ref={topNavbarRef}
         className="
-          fixed z-50 rounded bg-[#fdf9f4e0] shadow-md p-1 pl-6 pr-6 
+          fixed z-50 rounded bg-[#fdf9f4] shadow-lg p-1 pl-6 pr-6 
           flex justify-center items-center 
           w-[calc(83%-194px)] 
           ml-[0px] mr-[300px] 
@@ -561,7 +561,7 @@ const Navbar = () => {
       {/* Bottom Navbar */}
       <div
         ref={bottomNavbarRef}
-        className="fixed z-50 bg-[#fdf9f4] rounded mb-2 shadow-md p-1 pl-6 pr-6 flex justify-center items-center w-0.9/3 bottom-navbar-responsive"
+        className="fixed z-50 bg-[#fdf9f4] rounded mb-2 shadow-lg p-1 pl-6 pr-6 flex justify-center items-center w-0.9/3 bottom-navbar-responsive"
       >
         <ul className="flex space-x-6 relative">
           <li>

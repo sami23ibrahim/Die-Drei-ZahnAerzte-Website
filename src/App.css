@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: visible; /* Prevent horizontal scrolling */
 
 }
 

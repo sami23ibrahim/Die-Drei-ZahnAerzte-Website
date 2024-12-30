@@ -63,7 +63,7 @@ const AppointmentButton = () => {
   return (
     <div className="relative">
       {/* Button */}
-      <div className="appointment-button fixed right-4 group z-50 top-[10px] rounded">
+      <div className="appointment-button fixed right-4 group z-50 top-[10px] rounded shadow-lg">
         <a
           href="https://www.doctolib.de/zahnarztpraxis/berlin/die-drei-zahnaerzte/booking?bookingFunnelSource=external_referral&profile_skipped=true&utm_campaign=website-button&utm_content=option-8&utm_medium=referral&utm_source=die-drei-zahnaerzte-website-button&utm_term=die-drei-zahnaerzte"
           target="_blank"
@@ -83,13 +83,21 @@ const AppointmentButton = () => {
       <style jsx>{`
         .appointment-button {
           position: fixed;
-        }
+          background-color: #fdf9f4e0; /* Original background color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Original shadow */
+        border: none; /* No border by default */
 
+         
+        }
         @media (max-width: 760px) {
           .appointment-button {
             top: 16px; /* Center top */
             right: 30%; /* Move to center */
             transform: translateX(25%); /* Adjust alignment */
+             background-color: transparent; /* Make background transparent */
+          box-shadow: none; /* Remove the shadow */
+       border: 3px  solid #f496bf; /* Add a 2px pink border */
+      border-radius: 3px; /* Optional: round the corners */
           }
         }
       `}</style>

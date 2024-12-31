@@ -526,13 +526,15 @@ const Navbar = () => {
       <div
         ref={topNavbarRef}
         className="
-          fixed z-50 rounded bg-[#fdf9f4] shadow-lg p-1 pl-6 pr-6 
+          fixed z-50 rounded bg-[#fdf9f4] shadow-xl p-1 pl-6 pr-6 
           flex justify-center items-center 
           w-[calc(83%-194px)] 
           ml-[0px] mr-[300px] 
           mt-0 top-navbar
           lg:w-auto lg:ml-0 lg:mr-0
         "
+        style={{ filter: "drop-shadow(3px 3px 1px #f496bf)", // Adjusted shadow offset
+        }}
       >
         <ul className="flex space-x-6 whitespace-nowrap">
           <li>
@@ -562,6 +564,8 @@ const Navbar = () => {
       <div
         ref={bottomNavbarRef}
         className="fixed z-50 bg-[#fdf9f4] rounded mb-2 shadow-lg p-1 pl-6 pr-6 flex justify-center items-center w-0.9/3 bottom-navbar-responsive"
+        style={{ filter: "drop-shadow(3px 3px 1px #f496bf)", // Adjusted shadow offset
+        }}
       >
         <ul className="flex space-x-6 relative">
           <li>

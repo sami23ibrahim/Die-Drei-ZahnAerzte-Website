@@ -3853,9 +3853,11 @@ const TeamSection = () => {
   
   return (
     <div
-      className="relative bg-[#fdf9f4] py-16 overflow-x-hidden overflow-y-visible"
-      onClick={handleResetContent}
-    >
+    className="relative bg-[#fdf9f4] py-8 overflow-x-hidden overflow-y-visible"
+    onClick={() => {
+      handleResetContent(); // Reset content and clickedButton state
+    }}
+  >
       {/* Background */}
       <div
         className="absolute w-full bg-[#fffcdc00] z-0"
@@ -3873,7 +3875,9 @@ const TeamSection = () => {
       ></div>
 
 {/* Logos */}
-      <div className="absolute w-full z-0 grid grid-cols-5 gap-4 overflow-visible">
+      <div className="absolute w-full z-0 grid grid-cols-5 gap-4 overflow-visible"
+      
+      >
         {logos.map((logo, index) => (
           <img
             key={logo.id}
@@ -3895,6 +3899,8 @@ const TeamSection = () => {
         <h2
           ref={titleRef}
           className="text-center text-customPink text-3xl font-bold mb-12 mt-0"
+          style={{ filter: "drop-shadow(1px 1px 0.7px #909497)", // Adjusted shadow offset
+          }}
         >
           The Team
         </h2>
@@ -3913,24 +3919,29 @@ const TeamSection = () => {
         position: "relative",
         overflow: "visible",
         transform: `translate(${member.x}, ${member.y})`,
+       // paddingRight: index === 2 ? "20px" : "0px", // Add extra space for the rightmost image
 
         zIndex: 0,
         clipPath:
           index === 2
-            ? "polygon(0 0, 100% 0, 100% 93.0%, 0 93.0%)"
+            ? "polygon(0 0, 100% 0, 100% 92.8%, 0 92.8%)"
             : "none",
       }}
     >
       <img
-        src={member.image}
-        alt={member.name}
-        className="w-48 h-auto"
-        style={{
-          width: member.width,
-          height: member.height,
-          transformOrigin: "bottom",
-        }}
-      />
+    src={member.image}
+    alt={member.name}
+    className="w-48 h-auto"
+    style={{
+      filter:
+        index === 2
+          ? " drop-shadow(5px -4px 4px rgba(0, 0, 0, 0.3))" // Only top, bottom, and right shadows
+          : "drop-shadow(0 -4px 4px rgba(0, 0, 0, 0.3))",
+      width: member.width,
+      height: member.height,
+      transformOrigin: "bottom",
+    }}
+  />
 {/* Add Button under the middle image */}
 
       {index === 1 && (
@@ -3945,21 +3956,27 @@ const TeamSection = () => {
           }}
         >
           <div
-            className="bg-[#f496bf] text-white py-3 px-6 rounded-lg responsive-button flex items-center"
+            className="bg-[#fdf9f4] text-white py-3 px-6 rounded-lg responsive-button flex items-center"
             style={{
               width: "400px",
               height: "30px", // Slightly increased height for better centering
               display: "flex",
               justifyContent: "space-between",
-              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3), 0 -4px 6px rgba(0, 0, 0, 0.3), 4px 0 6px rgba(0, 0, 0, 0.1), -4px 0 6px rgba(0, 0, 0, 0.1)",
+             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3), 0 -2px 6px rgba(0, 0, 0, 0.7), 4px 0 6px rgba(0, 0, 0, 0.1), -4px 0 6px rgba(0, 0, 0, 0.1)",
+             boxShadow: "1px 1px 1px #f496bf, 2px 2px 1px #f496bf, 0px 0 0px #f496bf, 0px 0 0px #f496bf",
 
             }}
             onClick={(e) => e.stopPropagation()} // Prevent outside click interference
           >
       <div
-  className="w-1/3 text-center cursor-pointer transition-transform transform hover:scale-105 relative"
-  style={{ fontSize: "14px", lineHeight: "1.5" }} // Ensures spacing
-  onClick={() => handleContentChange(teamMembers[0].title, teamMembers[0].text, 0)}
+   className={`w-1/3 text-center cursor-pointer transition-transform transform hover:scale-105 relative ${
+    clickedButton === 0 ? "font-medium text-customPink leading-relaxed" : "font-medium text-gray-500 leading-relaxed"
+  }`}
+  style={{ fontSize: "14px", lineHeight: "1.4" }} // Ensures spacing
+  onClick={(e) => {
+    e.stopPropagation(); // Prevent propagation to the outer container
+    handleContentChange(teamMembers[0].title, teamMembers[0].text, 0);
+  }}
 >
   Hakam El Daghma
   <svg
@@ -3980,9 +3997,14 @@ const TeamSection = () => {
 </div>
 
             <div
-  className="w-1/3 text-center cursor-pointer transition-transform transform hover:scale-105 relative"
-  style={{ fontSize: "14px", lineHeight: "1.5" }} // Line height for spacing
-  onClick={() => handleContentChange(teamMembers[1].title, teamMembers[1].text, 1)}
+   className={`w-1/3 text-center cursor-pointer transition-transform transform hover:scale-105 relative ${
+    clickedButton === 1 ? "font-medium text-customPink leading-relaxed" : "font-medium text-gray-500 leading-relaxed"
+  }`}
+  style={{ fontSize: "14px", lineHeight: "1.4" }} // Line height for spacing
+  onClick={(e) => {
+    e.stopPropagation(); // Prevent propagation to the outer container
+    handleContentChange(teamMembers[1].title, teamMembers[1].text, 1);
+  }}
 >
   Fabian Badour
   <svg
@@ -4003,9 +4025,14 @@ const TeamSection = () => {
 </div>
 
 <div
-  className="w-1/3 text-center cursor-pointer transition-transform transform hover:scale-105 relative"
-  style={{ fontSize: "14px", lineHeight: "1.5" }} // Ensures spacing
-  onClick={() => handleContentChange(teamMembers[2].title, teamMembers[2].text, 2)}
+   className={`w-1/3 text-center cursor-pointer transition-transform transform hover:scale-105 relative ${
+    clickedButton === 2 ? "font-medium text-customPink leading-relaxed" : "font-medium text-gray-500 leading-relaxed"
+  }`}
+  style={{ fontSize: "13px", lineHeight: "1.4" }} // Ensures spacing
+  onClick={(e) => {
+    e.stopPropagation(); // Prevent propagation to the outer container
+    handleContentChange(teamMembers[2].title, teamMembers[2].text, 2);
+  }}
 >
   Prabh Singh Mahal
   <svg

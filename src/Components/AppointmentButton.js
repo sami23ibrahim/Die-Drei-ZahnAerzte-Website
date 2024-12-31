@@ -70,12 +70,13 @@ const AppointmentButton = () => {
           rel="noopener noreferrer"
           className="relative z-10"
         >
-          <button className="relative z-10 px-3 py-1 bg-[#fdf9f4e0] rounded overflow-hidden">
+          <button className="relative z-10 px-3 py-1 bg-[#fdf9f4e0] rounded overflow-hidden"
+         >
             <span className="relative text-gray-500 font-medium leading-relaxed z-20 group-hover:text-[#f496bf] transition-colors duration-500 ease-out">
               Appointment ➔
             </span>
             {/* Sliding Animation */}
-            <div className="absolute inset-0 bg-[#f496bf] left-28 transition-transform duration-500 ease-out transform group-hover:translate-x-full"></div>
+            <div className="absolute inset-0 bg-[#f496bf] left-28 transition-transform duration-500 ease-out transform group-hover:translate-x-full +20px"></div>
           </button>
         </a>
       </div>
@@ -83,9 +84,9 @@ const AppointmentButton = () => {
       <style jsx>{`
         .appointment-button {
           position: fixed;
-          background-color: #fdf9f4e0; /* Original background color */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Original shadow */
-        border: none; /* No border by default */
+          background-color: #none; /* Original background color */
+          box-shadow: 2px 2px 1px #f496bf; /* Original shadow */
+           border: none; /* No border by default */
 
          
         }
@@ -106,3 +107,4 @@ const AppointmentButton = () => {
 };
 
 export default AppointmentButton;
+

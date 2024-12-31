@@ -262,6 +262,8 @@ const ServicesAnimation = () => {
       <h2
         ref={titleRef}
         className="text-center text-3xl font-bold mb-20 mt-10 text-customPink "
+        style={{ filter: "drop-shadow(1px 1px 0.7px #909497)", // Adjusted shadow offset
+        }}
       >
         Our Services
       </h2>
@@ -286,6 +288,8 @@ const ServicesAnimation = () => {
               variants={{
                 initial: { rotate: 0 },
                 hover: { rotate: -10 }, // Slight left rotation
+              }}
+              style={{ filter: "drop-shadow(1px 1px 0.7px #909497)", // Adjusted shadow offset
               }}
               whileHover="hover"
               initial="initial"

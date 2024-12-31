@@ -65,7 +65,7 @@ const FadingText = ({ text, textOffset = 0, disappearLine = 100 }) => {
   return (
     <div
       className="absolute inset-0 flex justify-center z-10 pointer-events-none overflow-hidden"
-      style={{
+      style={{ filter: "drop-shadow(2px 3px 0.7px #f496bf)",
         transform: `translateY(${textOffset}px)`, // Adjust the initial vertical position of the text
         height: `${disappearLine}px`, // Adjust the imaginary line height
       }}

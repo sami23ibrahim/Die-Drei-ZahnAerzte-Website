@@ -212,7 +212,8 @@ const StyledFooter = () => {
       <h2
         ref={footerTitleRef}
         className="text-center text-3xl font-bold mb-12 text-customPink"
-        style={{ fontFamily: "'Inter', sans-serif" }}
+        style={{ filter: "drop-shadow(1px 1px 0.7px #909497)", // Adjusted shadow offset
+        }}
       >
         Contact Us
       </h2>
@@ -238,7 +239,7 @@ const StyledFooter = () => {
               Email Us
             </button>
             <button className="bg-[#fdf9f4] text-customPink px-4 py-2 rounded-lg hover:bg-gray-200 transition">
-              +44 (0)141 356 9878
+              +49 (0)000 000 000
             </button>
           </div>
         </div>
@@ -249,31 +250,31 @@ const StyledFooter = () => {
             <div>
               <h4 className="uppercase tracking-wider text-xs mb-2">( Content )</h4>
               <ul>
-                <li>Work</li>
-                <li>Intro</li>
-                <li>Reels</li>
-                <li>Directors</li>
+                <li>BlaBlaBla</li>
+                <li>BlaBlaBla</li>
+                <li>BlaBlaBla</li>
+                <li>BlaBlaBla</li>
               </ul>
             </div>
             <div>
               <h4 className="uppercase tracking-wider text-xs mb-2">( Content )</h4>
               <ul>
-                <li>Playground</li>
-                <li>Journal</li>
-                <li>Contact</li>
+                <li>BlaBlaBla</li>
+                <li>BlaBlaBla</li>
+                <li>BlaBlaBla</li>
               </ul>
             </div>
             <div>
               <h4 className="uppercase tracking-wider text-xs mb-2">( Connect )</h4>
               <ul>
-                <li>LinkedIn</li>
-                <li>Facebook</li>
-                <li>Instagram</li>
-                <li>Twitter</li>
+                <li>BlaBlaBla</li>
+                <li>BlaBlaBla</li>
+                <li>BlaBlaBla</li>
+                <li>BlaBlaBla</li>
               </ul>
             </div>
           </div>
-          <p className="mt-6">&copy; YourCompany 2024 | Terms & Privacy</p>
+          <p className="mt-6">&copy; DIE DREI ZAHNÄRZTE 2025 | Terms & Privacy</p>
         </div>
       </footer>
     </div>

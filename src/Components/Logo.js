@@ -65,8 +65,9 @@ import React from "react";
 const Logo = () => {
   return (
     <div
-      className="logo-container cursor-pointer"
-      style={{ zIndex: 100 }}
+      className="logo-container cursor-pointer "
+      style={{ zIndex: 100,  filter: "drop-shadow(2px 2px 1px #f496bf)", // Adjusted shadow offset
+      }}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} // Scrolls to the top smoothly
     >
       <img

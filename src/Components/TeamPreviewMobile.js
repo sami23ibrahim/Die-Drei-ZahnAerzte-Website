@@ -499,7 +499,7 @@ const TeamSectionMobile = () => {
       image: "/Assets/prab11.png",
       width: "82px",
       height: "150px",
-       x: "-12px",
+       x: "-9px",
        y: "0px",
     },
   ];
@@ -525,9 +525,12 @@ const TeamSectionMobile = () => {
 
   return (
     <div
-      className="relative bg-[#fdf9f4] py-8 overflow-x-hidden overflow-y-visible"
-      onClick={handleResetContent}
-    >
+    className="relative bg-[#fdf9f4] py-8 overflow-x-hidden overflow-y-visible"
+    onClick={() => {
+      handleResetContent(); // Reset content and clickedButton state
+    }}
+  >
+  
       {/* Moving Logos */}
       <div className="absolute w-full z-0 grid grid-cols-3 gap-2 overflow-visible">
         {logos.map((logo, index) => (
@@ -551,6 +554,8 @@ const TeamSectionMobile = () => {
         <h2
           ref={titleRef}
           className="text-center text-customPink text-2xl font-bold mb-8 mt-0"
+          style={{ filter: "drop-shadow(1px 1px 0.7px #909497)", // Adjusted shadow offset
+          }}
         >
           The Team
         </h2>
@@ -581,6 +586,10 @@ const TeamSectionMobile = () => {
         src={member.image}
         alt={member.name}
         style={{
+          filter:
+          index === 2
+            ? " drop-shadow(6px -4px 3px rgba(0, 0, 0, 0.4))" // Only top, bottom, and right shadows
+            : "drop-shadow(0 -4px 6px rgba(0, 0, 0, 0.5))",
           width: member.width,
           height: member.height,
           objectFit: "contain",
@@ -598,24 +607,27 @@ const TeamSectionMobile = () => {
           }}
         >
           <div
-            className="bg-[#f496bf] text-white py-2 px-1 rounded-lg responsive-button flex items-center"
+            className="bg-[#fdf9f4] text-white py-2 px-1 rounded-lg responsive-button flex items-center"
             style={{
               width: "400px", // Mobile button width
               display: "flex",
               height: "25px", 
               justifyContent: "space-between",
-              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1), 0 -4px 6px rgba(0, 0, 0, 0.1), 4px 0 6px rgba(0, 0, 0, 0.1), -4px 0 6px rgba(0, 0, 0, 0.1)",
+             // boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1), 0 -4px 6px rgba(0, 0, 0, 0.1), 4px 0 6px rgba(0, 0, 0, 0.1), -4px 0 6px rgba(0, 0, 0, 0.1)",
+             boxShadow: "1px 1px 1px #f496bf, 2px 2px 1px #f496bf, 0px 0 0px #f496bf, 0px 0 0px #f496bf",
 
             }}
             onClick={(e) => e.stopPropagation()} // Prevent outside click interference
           >
             {/* Split Button into Three Parts */}
             <div
-              className="w-1/3 text-center cursor-pointer transition-transform transform hover:scale-105 relative"
-              style={{ fontSize: "10px", lineHeight: "1.5" }}
-              onClick={() =>
-                handleContentChange(teamMembers[0].title, teamMembers[0].text, 0)
-              }
+ className={`w-1/3 text-center cursor-pointer transition-transform transform hover:scale-105 relative ${
+  clickedButton === 0 ? "font-medium text-customPink leading-relaxed" : "font-medium text-gray-500 leading-relaxed"
+}`}              style={{ fontSize: "10px", lineHeight: "1.5" }}
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent propagation to the outer container
+                handleContentChange(teamMembers[0].title, teamMembers[0].text, 0);
+              }}
             >
               Hakam Daghma
               <svg
@@ -635,11 +647,14 @@ const TeamSectionMobile = () => {
               </svg>
             </div>
             <div
-              className="w-1/3 text-center cursor-pointer transition-transform transform hover:scale-105 relative"
+               className={`w-1/3 text-center cursor-pointer transition-transform transform hover:scale-105 relative ${
+                clickedButton === 1 ?  "font-medium text-customPink leading-relaxed" : "font-medium text-gray-500 leading-relaxed"
+              }`}
               style={{ fontSize: "10px", lineHeight: "1.5" }}
-              onClick={() =>
-                handleContentChange(teamMembers[1].title, teamMembers[1].text, 1)
-              }
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent propagation to the outer container
+                handleContentChange(teamMembers[1].title, teamMembers[1].text, 1);
+              }}
             >
               Fabian Badour
               <svg
@@ -659,11 +674,14 @@ const TeamSectionMobile = () => {
               </svg>
             </div>
             <div
-              className="w-1/3 text-center cursor-pointer transition-transform transform hover:scale-105 relative"
+              className={`w-1/3 text-center cursor-pointer transition-transform transform hover:scale-105 relative ${
+                clickedButton === 2 ?  "font-medium text-customPink leading-relaxed" : "font-medium text-gray-500 leading-relaxed"
+              }`}
               style={{ fontSize: "10px", lineHeight: "1.5" }}
-              onClick={() =>
-                handleContentChange(teamMembers[2].title, teamMembers[2].text, 2)
-              }
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent propagation to the outer container
+                handleContentChange(teamMembers[2].title, teamMembers[2].text, 2);
+              }}
             >
               Prabh Mahal
               <svg

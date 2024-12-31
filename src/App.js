@@ -138,9 +138,11 @@ function App() {
       <Navbar />
       <AppointmentButton />
       <BurgerMenu />
-
+             <FullScreenVideo videoSrc={videoPath} textOverlay="Die Drei ZAHNÄRZTE" />
+      
+              <CustomHeroImage />
       {/* Services Animation Section */}
-      <div id="services" style={{ marginTop: "30px", backgroundColor: "#fdf9f4" }}>
+      <div id="services" style={{ marginTop: "30px", backgroundColor: "#fdf9f4",zIndex:0 }}>
         <ServicesAnimation />
       </div>
 
@@ -163,7 +165,7 @@ function App() {
       </div>                
 
       {/* Footer Section */}
-      <div id="contact" style={{ backgroundColor: "#fdf9f4" }}>
+      <div id="contact" style={{ backgroundColor: "#fdf9f4" ,zIndex:0}}>
         <Footer />
       </div>
     </div>
